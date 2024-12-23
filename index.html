@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Debate</title>
+</head>
+<body>
+    <h1>AI Debate</h1>
+    <form action="/debate" method="post">
+        <label for="topic">Topic:</label>
+        <input type="text" id="topic" name="topic" required><br><br>
+        <input type="submit" value="Start Debate">
+    </form>
+
+    {% if debate_history %}
+        <h2>Debate History</h2>
+        <pre>{{ debate_history }}</pre>
+    {% endif %}
+
+    {% if error %}
+        <h2>Error</h2>
+        <pre>{{ error }}</pre>
+    {% endif %}
+</body>
+</html>
